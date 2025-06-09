@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宗像・福津習い事ナビ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>宗像・福津習い事ナビ</h1>
+            <p>宗像市・福津市で開催されている様々な習い事・教室・サークル活動の情報</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="activities-section">
+            <h2>習い事一覧</h2>
+            <p id="loading-message">データを読み込んでいます...</p>
+            <div id="filter-container">
+                <div class="filter-group">
+                    <label for="area-filter">エリア:</label>
+                    <select id="area-filter">
+                        <option value="all">すべて</option>
+                        <option value="munakata">宗像市</option>
+                        <option value="fukutsu">福津市</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="category-filter">カテゴリー:</label>
+                    <select id="category-filter">
+                        <option value="all">すべて</option>
+                        <option value="sports">スポーツ</option>
+                        <option value="music">音楽</option>
+                        <option value="art">芸術</option>
+                        <option value="study">学習</option>
+                        <option value="culture">文化</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="age-filter">対象年齢:</label>
+                    <select id="age-filter">
+                        <option value="all">すべて</option>
+                        <option value="kids">子ども</option>
+                        <option value="teens">中高生</option>
+                        <option value="adults">大人</option>
+                        <option value="seniors">シニア</option>
+                    </select>
+                </div>
+            </div>
+            <div id="activities-container"></div>
+        </section>
+
+        <section id="registration-section">
+            <h2>宗像・福津習い事ナビ　掲載申請フォーム</h2>
+            <p>宗像市・福津市で開催されている習い事・教室・サークル活動の情報を掲載希望の方は、下記フォームよりお申し込みください。</p>
+            <p>下のボタンをクリックして、Googleフォームから申請を行ってください。</p>
+            <a href="#" class="button" id="registration-button">申請フォームを開く</a>
+            <p>申請内容は運営者が確認後、サイトに掲載されます。</p>
+        </section>
+
+        <section id="about-area-section">
+            <h2>宗像市・福津市について</h2>
+            <p>宗像市と福津市は、福岡県の北東部に位置する自然豊かな地域です。世界遺産「『神宿る島』宗像・沖ノ島と関連遺産群」を有し、歴史と文化が息づく魅力的な地域です。</p>
+            
+            <h3>地域の特色</h3>
+            <p>海と山に囲まれた豊かな自然環境を活かした体験型の習い事や、地域の伝統文化を学ぶ機会が多くあります。</p>
+            
+            <h3>活動の目的</h3>
+            <p>地域の文化継承や、子どもたちの健全な成長、高齢者の生きがいづくりなど、様々な目的で活動が行われています。</p>
+            
+            <h3>参加方法</h3>
+            <p>各活動の詳細ページから連絡先を確認し、直接お問い合わせください。多くの活動は体験参加も歓迎しています。</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>宗像・福津習い事ナビ</h3>
+                    <p>宗像市・福津市の習い事・教室・サークル活動の情報サイト</p>
+                </div>
+                <div class="footer-section">
+                    <h3>リンク</h3>
+                    <ul>
+                        <li><a href="about.html">サイトについて</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>関連サイト</h3>
+                    <ul>
+                        <li><a href="https://www.city.munakata.lg.jp/" target="_blank">宗像市公式サイト</a></li>
+                        <li><a href="https://www.city.fukutsu.lg.jp/" target="_blank">福津市公式サイト</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="current-year"></span> 宗像・福津習い事ナビ All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
